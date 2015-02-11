@@ -51,8 +51,9 @@ func GetIndex(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetAbout(w http.ResponseWriter, r *http.Request) {
-	obj := map[string]string{}
-	obj["aboutus"] = "Here is some about us data that is coming from an API call."
+	obj := map[string]string{
+		"aboutus": "Here is some about us data that is coming from an API call.",
+	}
 	someJson, _ := json.Marshal(obj)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(someJson)
